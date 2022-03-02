@@ -32,7 +32,9 @@ function loadWidget(config) {
 		</div>`);
 	// https://stackoverflow.com/questions/24148403/trigger-css-transition-on-appended-element
 	setTimeout(() => {
-		document.getElementById("waifu").style.bottom = 0;
+		//document.getElementById("waifu").style.bottom = 0;
+		document.getElementById("waifu").style.display = "none";
+		document.getElementById("waifu-toggle").classList.add("waifu-toggle-active");
 	}, 0);
 
 	function randomSelection(obj) {
@@ -82,7 +84,7 @@ function loadWidget(config) {
 		document.querySelector("#waifu-tool .fa-times").addEventListener("click", () => {
 			localStorage.setItem("waifu-display", Date.now());
 			showMessage("愿你有一天能与重要的人重逢。", 2000, 11);
-			document.getElementById("waifu").style.bottom = "-500px";
+			document.getElementById("waifu").style.bottom = "-400px";
 			setTimeout(() => {
 				document.getElementById("waifu").style.display = "none";
 				document.getElementById("waifu-toggle").classList.add("waifu-toggle-active");
